@@ -12,9 +12,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NestedListComponent } from './nested-list/nested-list.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NestedListComponent
   ],
   imports: [
     BrowserModule,
