@@ -1,0 +1,13 @@
+<mat-accordion multi>
+  <mat-expansion-panel *ngFor="let item of items">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ item.title || 'Untitled Item' }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div [innerHTML]="item.content"></div>
+
+    <app-nested-list *ngIf="item.children" [items]="item.children"></app-nested-list>
+  </mat-expansion-panel>
+</mat-accordion>
