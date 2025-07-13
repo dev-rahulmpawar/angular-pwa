@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Select Item</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-select [(value)]="selectedItem">
+      <mat-option *ngFor="let item of data.options" [value]="item">
+        <img [src]="item.icon" width="24" height="24" style="vertical-align: middle; margin-right: 8px;">
+        {{ item.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onAdd()">Add</button>
+</mat-dialog-actions>

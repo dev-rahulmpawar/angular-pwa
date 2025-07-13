@@ -9,7 +9,7 @@
               {{ item.title || 'Untitled Item' }}
             </mat-panel-title>
             <button mat-icon-button color="warn" (click)="removeItem(i)" matTooltip="Remove item">
-              <mat-icon>close</mat-icon>
+              <mat-icon>x</mat-icon>
             </button>
           </mat-expansion-panel-header>
 
@@ -23,7 +23,7 @@
     </div>
     <!-- Floating Action Button -->
     <button mat-fab color="primary" class="fab" (click)="addItem()">
-      <mat-icon>add</mat-icon>
+      <mat-icon>+</mat-icon>
     </button>
   </div>
   <div class="resource-list">

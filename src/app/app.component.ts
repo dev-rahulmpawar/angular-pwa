@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { MatDialog } from '@angular/material/dialog';
+import { AddItemDialogComponent } from './add-item-dialog/add-item-dialog.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,18 +13,32 @@ export class AppComponent {
   title = 'Icarus Resource Manager';
   items: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  itemOptions = [
+    { name: 'Solar Panel', icon: 'assets/icons/solar.png' },
+    { name: 'Battery Pack', icon: 'assets/icons/battery.png' },
+    { name: 'Wind Turbine', icon: 'assets/icons/wind.png' }
+  ];
+
+  constructor(private http: HttpClient, public dialog: MatDialog) {}
 
   addItem() {
-    const newItem = {
-      title: 'New Item',
-      content: '<p>Enter content here</p>',
-      children: []
-    };
-    this.items.push(newItem);
+    const dialogRef = this.dialog.open(AddItemDialogComponent, {
+    data: { options: this.itemOptions }
+  });
 
-    // API call to backend
-    //this.http.post('https://your-api.com/add', newItem).subscribe();
+  dialogRef.afterClosed().subscribe(result => {
+    if (result) {
+      const newItem = {
+        title: result.name,
+        content: `<p>Selected: ${result.name}</p><img src="${result.icon}" width="100">`,
+        children: []
+      };
+      this.items.push(newItem);
+
+      // Backend API call
+      //this.http.post('https://your-api.com/add', newItem).subscribe();
+    }
+  });
   }
 
   removeItem(index: number) {
