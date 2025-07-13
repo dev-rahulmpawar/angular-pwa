@@ -10,6 +10,8 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/material": "^16.2.0",
+    "@angular/cdk": "^16.2.0",
     "@angular/service-worker": "^16.2.0",
     "@angular/animations": "^16.2.12",
     "@angular/common": "^16.2.12",

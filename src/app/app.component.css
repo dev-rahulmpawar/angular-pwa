@@ -33,3 +33,19 @@ footer {
 footer img {
     width: 20px;
 }
+
+.fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+}
+
+.list-container {
+  margin: 24px;
+}
+
+mat-expansion-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
