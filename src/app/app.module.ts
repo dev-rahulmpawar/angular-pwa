@@ -15,13 +15,16 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { MatOptionModule } from '@angular/material/core';
 
 import { NestedListComponent } from './nested-list/nested-list.component';
+import { AddItemDialogComponent } from './add-item-dialog/add-item-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NestedListComponent
+    NestedListComponent,
+    AddItemDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { NestedListComponent } from './nested-list/nested-list.component';
     MatDialogModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatOptionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
