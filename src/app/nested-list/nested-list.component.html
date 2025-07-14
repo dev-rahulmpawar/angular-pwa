@@ -1,13 +1,24 @@
 <mat-accordion multi>
-  <mat-expansion-panel *ngFor="let item of items">
+  <mat-expansion-panel [expanded]="false" *ngFor="let item of items">
     <mat-expansion-panel-header>
-      <mat-panel-title>
-        {{ item.title || 'Untitled Item' }}
-      </mat-panel-title>
-    </mat-expansion-panel-header>
+      <div class="item-row">
+        <button mat-icon-button class="collapse-btn">
+        <mat-icon>expand_more</mat-icon>  <!-- Collapse/expand -->
+      </button>
 
+      <img class="item-img" [src]="item.image" alt="Item image" />
+
+      <span class="item-text">{{ item.title }}</span>
+
+      <button mat-icon-button class="remove-btn" (click)="removeItem(item)">
+        <mat-icon>close</mat-icon>  <!-- "X" remove button -->
+      </button>
+      </div>
+    </mat-expansion-panel-header>
+<div class="expanded-content">
     <div [innerHTML]="item.content"></div>
 
     <app-nested-list *ngIf="item.children" [items]="item.children"></app-nested-list>
+    </div>
   </mat-expansion-panel>
 </mat-accordion>
