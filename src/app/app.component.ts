@@ -7,7 +7,7 @@ import { AddItemDialogComponent } from './add-item-dialog/add-item-dialog.compon
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['../demo-styling.css']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Icarus Resource Manager';
