@@ -34,14 +34,16 @@ footer img {
     width: 20px;
 }
 
-.fab {
+.fixed-fab {
   position: fixed;
   bottom: 24px;
   right: 24px;
+  z-index: 1000; /* Ensures it's above other UI */
 }
 
 .list-container {
-  margin: 24px;
+  width: 80%;
+  margin: 0 auto; /* centers the container horizontally */
 }
 
 mat-expansion-panel-header {

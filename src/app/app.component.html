@@ -3,7 +3,7 @@
   <div class="header">
     <div class="list-container">
       <mat-accordion multi>
-        <mat-expansion-panel *ngFor="let item of items; let i = index">
+        <mat-expansion-panel  [expanded]="false" *ngFor="let item of items; let i = index">
           <mat-expansion-panel-header>
             <mat-panel-title>
               {{ item.title || 'Untitled Item' }}
@@ -22,7 +22,7 @@
       </mat-accordion>
     </div>
     <!-- Floating Action Button -->
-    <button mat-fab color="primary" class="fab" (click)="addItem()">
+    <button mat-fab color="primary" class="fixed-fab" aria-label="Add" (click)="addItem()">
       <mat-icon>+</mat-icon>
     </button>
   </div>
